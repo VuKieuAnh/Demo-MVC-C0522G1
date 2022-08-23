@@ -1,6 +1,7 @@
 package com.codegym.cms.controller;
 
 import com.codegym.cms.model.Customer;
+import com.codegym.cms.service.CustomerDAO;
 import com.codegym.cms.service.CustomerService;
 import com.codegym.cms.service.ICustomerService;
 
@@ -12,7 +13,7 @@ import java.util.List;
 
 @WebServlet(name = "CustomerServlet", value = "/customers")
 public class CustomerServlet extends HttpServlet {
-    private ICustomerService customerService = new CustomerService();
+    private ICustomerService customerService = new CustomerDAO();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
